@@ -13,11 +13,11 @@ export function Footer() {
     >
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} John Developer. All rights reserved.
+          © {new Date().getFullYear()} Arvin Premathilake. All rights reserved.
         </p>
         <p className="text-sm text-muted-foreground">
-          Designed & Built with{" "}
-          <span className="text-accent">care</span>
+          Designed & Built with care
+          <span className="text-accent"> by Arvin.</span>
         </p>
       </div>
     </motion.footer>

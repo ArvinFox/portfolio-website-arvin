@@ -124,24 +124,21 @@ export function ThemeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-36">
         <DropdownMenuItem 
-          onClick={() => setTheme("light")}
-          className="gap-2 cursor-pointer hover:bg-secondary/80 focus:bg-secondary/80"
+          onSelect={() => setTheme("light")}
         >
           <Sun className="h-4 w-4 text-amber-500" />
           <span>Light</span>
           {theme === "light" && <span className="ml-auto text-accent">*</span>}
         </DropdownMenuItem>
         <DropdownMenuItem 
-          onClick={() => setTheme("dark")}
-          className="gap-2 cursor-pointer hover:bg-secondary/80 focus:bg-secondary/80"
+          onSelect={() => setTheme("dark")}
         >
           <Moon className="h-4 w-4 text-indigo-400" />
           <span>Dark</span>
           {theme === "dark" && <span className="ml-auto text-accent">*</span>}
         </DropdownMenuItem>
         <DropdownMenuItem 
-          onClick={() => setTheme("system")}
-          className="gap-2 cursor-pointer hover:bg-secondary/80 focus:bg-secondary/80"
+          onSelect={() => setTheme("system")}
         >
           <SystemIcon className="h-4 w-4" />
           <span>System</span>

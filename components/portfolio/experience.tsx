@@ -5,31 +5,14 @@ import { Badge } from "@/components/ui/badge"
 
 const experiences = [
   {
-    period: "2023 — Present",
-    title: "Senior Frontend Engineer",
-    company: "TechCorp",
+    period: "2026 - Present",
+    title: "Software Engineering Intern",
+    company: "Majstro Solutions (Pvt) Ltd., Kiribathgoda",
+    logo: "/assets/majstro-logo-color.svg",
     description:
-      "Lead the development of the company's design system and component library. Collaborate with cross-functional teams to deliver accessible, performant user interfaces.",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
-    link: "#",
-  },
-  {
-    period: "2021 — 2023",
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    description:
-      "Built and maintained multiple web applications from the ground up. Implemented CI/CD pipelines and improved deployment processes.",
-    skills: ["Node.js", "PostgreSQL", "AWS", "Docker"],
-    link: "#",
-  },
-  {
-    period: "2019 — 2021",
-    title: "Frontend Developer",
-    company: "DigitalAgency",
-    description:
-      "Developed responsive websites and web applications for various clients. Focused on performance optimization and accessibility improvements.",
-    skills: ["JavaScript", "Vue.js", "SCSS", "Webpack"],
-    link: "#",
+      "Developing mobile and web applications as a Software Engineering Intern. Working with modern technologies and contributing to various projects across the full stack.",
+    skills: ["React", "Flutter", "Node.js", "Express", "TypeScript", "JavaScript", "Dart", "Java", "Firebase", "MongoDB", "Supabase", "REST APIs", "Docker", "Git", "Mobile Development", "Web Development"],
+    link: "https://majstro.io",
   },
 ]
 
@@ -54,28 +37,41 @@ export function Experience() {
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <motion.a
+            <motion.div
               key={exp.title}
-              href={exp.link}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group block p-6 -mx-6 rounded-xl transition-all duration-300 hover:bg-secondary/50"
+              className="block p-6 rounded-xl bg-secondary/50 border border-border/50"
             >
-              <div className="grid sm:grid-cols-[140px_1fr] gap-4">
-                <p className="text-sm text-muted-foreground font-mono">
-                  {exp.period}
-                </p>
-                <div className="space-y-3">
+              <div className="flex gap-4 items-center">
+                {exp.logo && (
+                  <img 
+                    src={exp.logo} 
+                    alt={`${exp.company} logo`}
+                    className="w-14 h-14 object-contain flex-shrink-0"
+                  />
+                )}
+                <div className="flex-1 space-y-3">
+                  <p className="text-sm text-muted-foreground">
+                    {exp.period}
+                  </p>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors duration-200">
+                    <h3 className="text-lg font-semibold text-foreground">
                       {exp.title}
                       <span className="text-accent"> · </span>
-                      {exp.company}
-                      <span className="inline-block ml-1 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
-                        ↗
-                      </span>
+                      <a 
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-accent transition-colors duration-200 group"
+                      >
+                        {exp.company}
+                        <span className="inline-block ml-1 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
+                          ↗
+                        </span>
+                      </a>
                     </h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
@@ -94,27 +90,9 @@ export function Experience() {
                   </div>
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12"
-        >
-          <a
-            href="/resume.pdf"
-            className="inline-flex items-center gap-2 text-foreground font-medium hover:text-accent transition-colors group"
-          >
-            View Full Resume
-            <span className="transition-transform duration-200 group-hover:translate-x-1">
-              →
-            </span>
-          </a>
-        </motion.div>
       </div>
     </section>
   )

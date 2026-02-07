@@ -39,6 +39,26 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+html {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* Exclude elements with specific animations from theme transition */
+[class*="animate-"],
+[class*="transition-"] {
+  transition-property: inherit;
+  transition-timing-function: inherit;
+  transition-duration: inherit;
+}
+
 .dark {
   --background: oklch(0.13 0.005 250);
   --foreground: oklch(0.93 0 0);

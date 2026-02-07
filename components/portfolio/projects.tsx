@@ -175,7 +175,7 @@ export function Projects() {
   return (
     <>
       {/* Individual Projects Section */}
-      <section className="py-24 px-6 bg-secondary/30" id="individual-projects">
+      <section className="py-24 px-6" id="individual-projects">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
