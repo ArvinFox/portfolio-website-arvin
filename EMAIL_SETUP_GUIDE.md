@@ -1,44 +1,44 @@
-# Setting Up Email Functionality - Resend
+# Setting Up Email Functionality (Resend)
 
-Your contact form is now set up! Here's how to get your email working:
+This guide explains how to enable the contact form email sending using Resend.
 
-## Option 1: Using Resend (Recommended - Easiest)
+## Option 1: Using Resend (Recommended)
 
-Resend is a modern email API that's super easy to set up.
+Resend is a modern email API with a generous free tier.
 
 ### Steps:
 
-1. **Sign up for Resend (Free):**
+1. **Sign up for Resend:**
    - Go to: https://resend.com/signup
    - Sign up with your email or GitHub account
    - Free plan includes 3,000 emails/month - perfect for a portfolio!
 
-2. **Get Your API Key:**
+2. **Create an API Key:**
    - After signing in, go to: https://resend.com/api-keys
    - Click "Create API Key"
    - Give it a name like "Portfolio Website"
    - Copy the API key (it starts with `re_`)
 
-3. **Add API Key to `.env.local`:**
+3. **Add the API Key to `.env.local`:**
 
    ```
    RESEND_API_KEY="re_your_actual_api_key_here"
-   CONTACT_EMAIL="arvin250cc@gmail.com"
+   CONTACT_EMAIL="your.email@example.com"
    ```
 
-4. **Verify Your Domain (Optional but Recommended):**
-   - For testing: You can use Resend's default email `onboarding@resend.dev`
-   - For production: Verify your own domain at https://resend.com/domains
-   - This allows emails to come from your own domain (e.g., contact@yourdomain.com)
+4. **Verify Your Domain (Optional):**
+   - For testing, you can use Resend's default sender.
+   - For production, verify your domain at https://resend.com/domains
+   - This allows sending from your own domain (e.g., contact@yourdomain.com)
 
 5. **Test It:**
-   - Restart your dev server: Stop the current one and run `npm run dev` again
+   - Restart your dev server: stop the current one and run `npm run dev` again
    - Fill out the contact form on your website
    - Check your email inbox!
 
 ---
 
-## Option 2: Using Gmail SMTP (Alternative)
+## Option 2: Gmail SMTP (Alternative)
 
 If you prefer using Gmail instead:
 
@@ -66,9 +66,9 @@ If you prefer using Gmail instead:
    ```
    SMTP_HOST="smtp.gmail.com"
    SMTP_PORT="587"
-   SMTP_USER="arvin250cc@gmail.com"
+   SMTP_USER="your.email@example.com"
    SMTP_PASSWORD="your_16_char_app_password"
-   CONTACT_EMAIL="arvin250cc@gmail.com"
+   CONTACT_EMAIL="your.email@example.com"
    ```
 
 5. **Update the API route** (app/api/contact/route.ts) to use nodemailer instead of Resend
@@ -77,11 +77,10 @@ If you prefer using Gmail instead:
 
 ## Current Status
 
-✅ Contact form created with validation
-✅ API route set up at `/api/contact`
-✅ Email package (Resend) installed
-✅ Environment variables configured
-⏳ **Next Step:** Get your Resend API key from https://resend.com/signup
+- Contact form created with validation
+- API route set up at `/api/contact`
+- Resend integration installed
+- Environment variables configured via `.env.local`
 
 ## Testing
 
@@ -95,13 +94,7 @@ If you prefer using Gmail instead:
 
 ---
 
-## What Changed
+## Notes
 
-1. ✅ Removed the mail icon from social links
-2. ✅ Added a beautiful contact form with Name, Email, and Message fields
-3. ✅ Created API endpoint to handle email sending
-4. ✅ Added form validation and error handling
-5. ✅ Added success/error messages
-6. ✅ Installed Resend package
-
-The form is now live on your website - just add your Resend API key to make it functional!
+- Do not commit `.env.local` to GitHub.
+- Keep keys and passwords private.

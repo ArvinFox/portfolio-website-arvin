@@ -1,4 +1,4 @@
-# Portfolio Website - Arvin Premathilake
+# Portfolio Website
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
@@ -6,13 +6,13 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 ### 1. Environment Configuration
 
-Copy the `.env.example` file to `.env.local`:
+Copy the `.env.example` file to `.env.local` and update the values:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Then update `.env.local` with your personal information:
+Then update `.env.local` with your personal information and API keys:
 
 - `NEXT_PUBLIC_NAME` - Your full name
 - `NEXT_PUBLIC_TITLE` - Your professional title
@@ -23,6 +23,12 @@ Then update `.env.local` with your personal information:
 - `NEXT_PUBLIC_GITHUB_URL` - Your GitHub profile URL
 - `NEXT_PUBLIC_LINKEDIN_URL` - Your LinkedIn profile URL
 - `NEXT_PUBLIC_TWITTER_URL` - Your Twitter/X profile URL
+- `NEXT_PUBLIC_FACEBOOK_URL` - Your Facebook profile URL
+- `RESEND_API_KEY` - Resend API key for contact form
+- `CONTACT_EMAIL` - Where contact form emails are sent
+- `SPOTIFY_CLIENT_ID` - Spotify app client ID
+- `SPOTIFY_CLIENT_SECRET` - Spotify app client secret
+- `SPOTIFY_REFRESH_TOKEN` - Spotify refresh token for now-playing
 
 ### 2. Add Your Assets
 
@@ -52,6 +58,13 @@ npm run build
 npm start
 ```
 
+## Features
+
+- Responsive portfolio layout
+- Contact form with email delivery (Resend)
+- Spotify now-playing widget (optional)
+- Light/dark mode with smooth transitions
+
 ## Project Structure
 
 ```
@@ -78,6 +91,7 @@ npm start
 - **Radix UI** - Accessible components
 - **Lucide React** - Icons
 
-## License
+## Notes
 
-Personal portfolio website.
+- Do not commit `.env.local`.
+- For email setup, see EMAIL_SETUP_GUIDE.md.
