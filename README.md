@@ -58,6 +58,12 @@ npm run build
 npm start
 ```
 
+### 6. Clean Build Output
+
+```bash
+npm run clean
+```
+
 ## Features
 
 - Responsive portfolio layout
